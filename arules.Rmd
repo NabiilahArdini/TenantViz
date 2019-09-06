@@ -29,6 +29,8 @@ library(visNetwork) # for Vizualization Network
 
 The mall dummy data contains Date, Costumer ID (code), and various mall tenants which were visited on each day by each costumer (marked by 1 (visited)).
 
+Hehe
+
 ```{r}
 mall <- read.csv("dummy_arules.csv")
 transactional <- mall %>% 
