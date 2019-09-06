@@ -1,0 +1,125 @@
+---
+title: "Dummy Mall Data"
+author: "Nabiilah"
+date: "8/16/2019"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: textmate
+    number_sections: false
+    df_print: paged
+---
+<style>
+h1.title {
+  text-align: center;
+}
+h4.author {
+  text-align: center;
+}
+h4.date {
+  text-align: center;
+}
+
+body {
+text-align: justify}
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyr)
+library(dplyr)
+library(lubridate)
+```
+
+## Read Data
+
+```{r message=FALSE, warning=FALSE}
+dummy <- read.csv("dummy-corr.csv")
+dummy <- dummy %>%
+  mutate(Date = mdy(Date))
+
+dummy
+```
+
+## Tenant Significancies to Mall based on Revenues
+
+
+* (-) assuming there is only one type of crowds
+* (-) assuming that each tenant have similar revenues~number of costumer: one type of tenant whose revenues is high may not gave higher amount of costumer than the one which has lower revenues with lower price per item/services.
+
+```{r}
+size <- dummy %>%
+  group_by(Tenant) %>%
+  dplyr::summarize(Monthly_Revenue = mean(Revenue)) %>% 
+  arrange(desc(Monthly_Revenue)) %>% 
+  mutate(size = round(Monthly_Revenue*0.00000001,1))
+
+size
+```
+
+## Corelation Matrix between Tenants
+
+Visualization using GGally package
+
+```{r message=FALSE, warning=FALSE}
+library(GGally)
+
+dummy_cor <- dummy %>% 
+  select(Tenant,Date,Revenue) %>%
+  spread(Tenant,Revenue)
+
+dummy_cor
+
+ggcorr(dummy_cor[,-1], label = T, label_size = 2.5, hjust = 1, layout.exp = 5)
+```
+
+Transforming corelation result into data frame:
+
+```{r message=FALSE, warning=FALSE}
+library(Hmisc)
+dummy_cor_m <- as.matrix(dummy_cor[,-1])
+cor_matrix <- rcorr(dummy_cor_m)
+
+# ++++++++++++++++++++++++++++
+# flattenCorrMatrix
+# ++++++++++++++++++++++++++++
+# cormat : matrix of the correlation coefficients
+# pmat : matrix of the correlation p-values
+
+flattenCorrMatrix <- function(cormat) {
+  ut <- upper.tri(cormat)
+  data.frame(
+    Tenant1 = rownames(cormat)[row(cormat)[ut]],
+    Tenant2 = rownames(cormat)[col(cormat)[ut]],
+    Corelation  =(cormat)[ut]
+    )
+}
+
+flat_cor <- flattenCorrMatrix(cor_matrix$r) %>% 
+  filter(Corelation >= 0.5 | Corelation <= -0.5)
+
+cor_df <- flat_cor %>% 
+  mutate(width=ifelse(Corelation>0.5,Corelation,-Corelation)) %>% 
+  mutate(color=ifelse(Corelation>0.5,"Blue","Red")) %>% 
+  mutate(width=width^5*10)
+
+cor_df
+```
+
+## Visualization Network
+
+```{r}
+# library(visNetwork)
+# set.seed(100)
+# visNetwork(nodes=tenant,edges=syn,width="100%") %>% 
+#   visLegend() %>% 
+#   visOptions(nodesIdSelection = T,highlightNearest = T) 
+```
+

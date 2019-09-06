@@ -1,0 +1,621 @@
+No,Tenant,Group,Date,Revenue
+1,Chatime,F&B,"Tuesday, January 1, 2019",72869985.62
+2,Chatime,F&B,"Wednesday, January 2, 2019",71741410.58
+3,Chatime,F&B,"Thursday, January 3, 2019",71559865.07
+4,Chatime,F&B,"Friday, January 4, 2019",71550218.57
+5,Chatime,F&B,"Saturday, January 5, 2019",80489318.94
+6,Chatime,F&B,"Sunday, January 6, 2019",85318227.58
+7,Chatime,F&B,"Monday, January 7, 2019",71294118.66
+8,Chatime,F&B,"Tuesday, January 8, 2019",71173197.85
+9,Chatime,F&B,"Wednesday, January 9, 2019",71111344.52
+10,Chatime,F&B,"Thursday, January 10, 2019",70807664.74
+11,Chatime,F&B,"Friday, January 11, 2019",70745827.94
+12,Chatime,F&B,"Saturday, January 12, 2019",81424822.98
+13,Chatime,F&B,"Sunday, January 13, 2019",79299127.23
+14,Chatime,F&B,"Monday, January 14, 2019",70087863.01
+15,Chatime,F&B,"Tuesday, January 15, 2019",70246673.54
+16,Chatime,F&B,"Wednesday, January 16, 2019",70199167.55
+17,Chatime,F&B,"Thursday, January 17, 2019",70150059.47
+18,Chatime,F&B,"Friday, January 18, 2019",70270312.87
+19,Chatime,F&B,"Saturday, January 19, 2019",78489318.94
+20,Chatime,F&B,"Sunday, January 20, 2019",76318227.58
+21,Chatime,F&B,"Monday, January 21, 2019",69905479.05
+22,Chatime,F&B,"Tuesday, January 22, 2019",69709476.47
+23,Chatime,F&B,"Wednesday, January 23, 2019",69682562.92
+24,Chatime,F&B,"Thursday, January 24, 2019",69647907.53
+25,Chatime,F&B,"Friday, January 25, 2019",69520191.95
+26,Chatime,F&B,"Saturday, January 26, 2019",69312488.85
+27,Chatime,F&B,"Sunday, January 27, 2019",69296404.12
+28,Chatime,F&B,"Monday, January 28, 2019",69098097.14
+29,Chatime,F&B,"Tuesday, January 29, 2019",68783024.01
+30,Chatime,F&B,"Wednesday, January 30, 2019",68524057.7
+31,Chatime,F&B,"Thursday, January 31, 2019",68501048.26
+32,ZARA,Fashion,"Tuesday, January 1, 2019",45442212.61
+33,ZARA,Fashion,"Wednesday, January 2, 2019",47318075.56
+34,ZARA,Fashion,"Thursday, January 3, 2019",44378489.92
+35,ZARA,Fashion,"Friday, January 4, 2019",46895504.79
+36,ZARA,Fashion,"Saturday, January 5, 2019",45455606.03
+37,ZARA,Fashion,"Sunday, January 6, 2019",47349996.46
+38,ZARA,Fashion,"Monday, January 7, 2019",45684598.28
+39,ZARA,Fashion,"Tuesday, January 8, 2019",44776165.52
+40,ZARA,Fashion,"Wednesday, January 9, 2019",47889676.09
+41,ZARA,Fashion,"Thursday, January 10, 2019",47276680.8
+42,ZARA,Fashion,"Friday, January 11, 2019",48026183.8
+43,ZARA,Fashion,"Saturday, January 12, 2019",44394250.37
+44,ZARA,Fashion,"Sunday, January 13, 2019",47101524.63
+45,ZARA,Fashion,"Monday, January 14, 2019",50421948.21
+46,ZARA,Fashion,"Tuesday, January 15, 2019",45625944.5
+47,ZARA,Fashion,"Wednesday, January 16, 2019",44513301.6
+48,ZARA,Fashion,"Thursday, January 17, 2019",45276475.68
+49,ZARA,Fashion,"Friday, January 18, 2019",44063377.16
+50,ZARA,Fashion,"Saturday, January 19, 2019",43671249.72
+51,ZARA,Fashion,"Sunday, January 20, 2019",46722853.23
+52,ZARA,Fashion,"Monday, January 21, 2019",44930611.13
+53,ZARA,Fashion,"Tuesday, January 22, 2019",47171109.22
+54,ZARA,Fashion,"Wednesday, January 23, 2019",45214806.99
+55,ZARA,Fashion,"Thursday, January 24, 2019",44763590.1
+56,ZARA,Fashion,"Friday, January 25, 2019",46068434.05
+57,ZARA,Fashion,"Saturday, January 26, 2019",46771367.9
+58,ZARA,Fashion,"Sunday, January 27, 2019",46502510.41
+59,ZARA,Fashion,"Monday, January 28, 2019",44025162.14
+60,ZARA,Fashion,"Tuesday, January 29, 2019",43459026.81
+61,ZARA,Fashion,"Wednesday, January 30, 2019",45183823.76
+62,ZARA,Fashion,"Thursday, January 31, 2019",44631570.78
+63,H&M,Fashion,"Tuesday, January 1, 2019",42106511.6
+64,H&M,Fashion,"Wednesday, January 2, 2019",45848961.05
+65,H&M,Fashion,"Thursday, January 3, 2019",38173783.73
+66,H&M,Fashion,"Friday, January 4, 2019",38986485.01
+67,H&M,Fashion,"Saturday, January 5, 2019",39125305.06
+68,H&M,Fashion,"Sunday, January 6, 2019",35378859.55
+69,H&M,Fashion,"Monday, January 7, 2019",38906544.87
+70,H&M,Fashion,"Tuesday, January 8, 2019",41690729.2
+71,H&M,Fashion,"Wednesday, January 9, 2019",44844966.54
+72,H&M,Fashion,"Thursday, January 10, 2019",36267520.83
+73,H&M,Fashion,"Friday, January 11, 2019",42771525.9
+74,H&M,Fashion,"Saturday, January 12, 2019",46433218.24
+75,H&M,Fashion,"Sunday, January 13, 2019",40404876.14
+76,H&M,Fashion,"Monday, January 14, 2019",39504661.26
+77,H&M,Fashion,"Tuesday, January 15, 2019",45131527.79
+78,H&M,Fashion,"Wednesday, January 16, 2019",44885792.61
+79,H&M,Fashion,"Thursday, January 17, 2019",40337094.66
+80,H&M,Fashion,"Friday, January 18, 2019",37745791.11
+81,H&M,Fashion,"Saturday, January 19, 2019",42110627.58
+82,H&M,Fashion,"Sunday, January 20, 2019",33527575.84
+83,H&M,Fashion,"Monday, January 21, 2019",43820270.18
+84,H&M,Fashion,"Tuesday, January 22, 2019",39126595.67
+85,H&M,Fashion,"Wednesday, January 23, 2019",47015731.38
+86,H&M,Fashion,"Thursday, January 24, 2019",44338152.51
+87,H&M,Fashion,"Friday, January 25, 2019",37566915.42
+88,H&M,Fashion,"Saturday, January 26, 2019",40382511.04
+89,H&M,Fashion,"Sunday, January 27, 2019",36295145.79
+90,H&M,Fashion,"Monday, January 28, 2019",36689388.86
+91,H&M,Fashion,"Tuesday, January 29, 2019",41858186.57
+92,H&M,Fashion,"Wednesday, January 30, 2019",43166194.11
+93,H&M,Fashion,"Thursday, January 31, 2019",40605740.57
+94,Pull&Bear,Fashion,"Tuesday, January 1, 2019",44573030.47
+95,Pull&Bear,Fashion,"Wednesday, January 2, 2019",53590602.73
+96,Pull&Bear,Fashion,"Thursday, January 3, 2019",42177656.1
+97,Pull&Bear,Fashion,"Friday, January 4, 2019",38083557.62
+98,Pull&Bear,Fashion,"Saturday, January 5, 2019",48263524.82
+99,Pull&Bear,Fashion,"Sunday, January 6, 2019",42432892.24
+100,Pull&Bear,Fashion,"Monday, January 7, 2019",42823666.13
+101,Pull&Bear,Fashion,"Tuesday, January 8, 2019",41464481.15
+102,Pull&Bear,Fashion,"Wednesday, January 9, 2019",45756811.78
+103,Pull&Bear,Fashion,"Thursday, January 10, 2019",43536165.35
+104,Pull&Bear,Fashion,"Friday, January 11, 2019",44929965.95
+105,Pull&Bear,Fashion,"Saturday, January 12, 2019",49148272.08
+106,Pull&Bear,Fashion,"Sunday, January 13, 2019",38319823.79
+107,Pull&Bear,Fashion,"Monday, January 14, 2019",40925019.29
+108,Pull&Bear,Fashion,"Tuesday, January 15, 2019",36623390.37
+109,Pull&Bear,Fashion,"Wednesday, January 16, 2019",38474982.84
+110,Pull&Bear,Fashion,"Thursday, January 17, 2019",44744144.36
+111,Pull&Bear,Fashion,"Friday, January 18, 2019",38195521.83
+112,Pull&Bear,Fashion,"Saturday, January 19, 2019",41942981.08
+113,Pull&Bear,Fashion,"Sunday, January 20, 2019",47344233.72
+114,Pull&Bear,Fashion,"Monday, January 21, 2019",38140969.03
+115,Pull&Bear,Fashion,"Tuesday, January 22, 2019",43176914.93
+116,Pull&Bear,Fashion,"Wednesday, January 23, 2019",52838484.07
+117,Pull&Bear,Fashion,"Thursday, January 24, 2019",49747359.22
+118,Pull&Bear,Fashion,"Friday, January 25, 2019",37670217.01
+119,Pull&Bear,Fashion,"Saturday, January 26, 2019",38801034.33
+120,Pull&Bear,Fashion,"Sunday, January 27, 2019",38500156.17
+121,Pull&Bear,Fashion,"Monday, January 28, 2019",35520905.22
+122,Pull&Bear,Fashion,"Tuesday, January 29, 2019",47335522.38
+123,Pull&Bear,Fashion,"Wednesday, January 30, 2019",40993309.28
+124,Pull&Bear,Fashion,"Thursday, January 31, 2019",38963521.3
+125,Guardian,Beauty Care,"Tuesday, January 1, 2019",23222813.29
+126,Guardian,Beauty Care,"Wednesday, January 2, 2019",20674631.91
+127,Guardian,Beauty Care,"Thursday, January 3, 2019",18185097.82
+128,Guardian,Beauty Care,"Friday, January 4, 2019",19262446.39
+129,Guardian,Beauty Care,"Saturday, January 5, 2019",21625092.91
+130,Guardian,Beauty Care,"Sunday, January 6, 2019",20069238.77
+131,Guardian,Beauty Care,"Monday, January 7, 2019",19948279.71
+132,Guardian,Beauty Care,"Tuesday, January 8, 2019",19778304.46
+133,Guardian,Beauty Care,"Wednesday, January 9, 2019",20950242
+134,Guardian,Beauty Care,"Thursday, January 10, 2019",21162812.18
+135,Guardian,Beauty Care,"Friday, January 11, 2019",17697389.52
+136,Guardian,Beauty Care,"Saturday, January 12, 2019",19817729.86
+137,Guardian,Beauty Care,"Sunday, January 13, 2019",18258569.92
+138,Guardian,Beauty Care,"Monday, January 14, 2019",18805589.96
+139,Guardian,Beauty Care,"Tuesday, January 15, 2019",16975685.59
+140,Guardian,Beauty Care,"Wednesday, January 16, 2019",18584573.43
+141,Guardian,Beauty Care,"Thursday, January 17, 2019",20125894.12
+142,Guardian,Beauty Care,"Friday, January 18, 2019",17970081.71
+143,Guardian,Beauty Care,"Saturday, January 19, 2019",15600070.35
+144,Guardian,Beauty Care,"Sunday, January 20, 2019",17662435.82
+145,Guardian,Beauty Care,"Monday, January 21, 2019",19446271.31
+146,Guardian,Beauty Care,"Tuesday, January 22, 2019",21465710.52
+147,Guardian,Beauty Care,"Wednesday, January 23, 2019",18678599.4
+148,Guardian,Beauty Care,"Thursday, January 24, 2019",16184391.49
+149,Guardian,Beauty Care,"Friday, January 25, 2019",19216201.99
+150,Guardian,Beauty Care,"Saturday, January 26, 2019",20230958.36
+151,Guardian,Beauty Care,"Sunday, January 27, 2019",19286902.36
+152,Guardian,Beauty Care,"Monday, January 28, 2019",17577603.13
+153,Guardian,Beauty Care,"Tuesday, January 29, 2019",21150693.3
+154,Guardian,Beauty Care,"Wednesday, January 30, 2019",21978129.68
+155,Guardian,Beauty Care,"Thursday, January 31, 2019",16387251.2
+156,Celebrity Fitness,Sports,"Tuesday, January 1, 2019",44258437.17
+157,Celebrity Fitness,Sports,"Wednesday, January 2, 2019",50724813.73
+158,Celebrity Fitness,Sports,"Thursday, January 3, 2019",58219416.72
+159,Celebrity Fitness,Sports,"Friday, January 4, 2019",51096874.77
+160,Celebrity Fitness,Sports,"Saturday, January 5, 2019",44815490.51
+161,Celebrity Fitness,Sports,"Sunday, January 6, 2019",45753819.3
+162,Celebrity Fitness,Sports,"Monday, January 7, 2019",48118096.2
+163,Celebrity Fitness,Sports,"Tuesday, January 8, 2019",53383472.71
+164,Celebrity Fitness,Sports,"Wednesday, January 9, 2019",53432852.39
+165,Celebrity Fitness,Sports,"Thursday, January 10, 2019",54453868.52
+166,Celebrity Fitness,Sports,"Friday, January 11, 2019",49808972.4
+167,Celebrity Fitness,Sports,"Saturday, January 12, 2019",53703433.64
+168,Celebrity Fitness,Sports,"Sunday, January 13, 2019",48860215.61
+169,Celebrity Fitness,Sports,"Monday, January 14, 2019",55889750.88
+170,Celebrity Fitness,Sports,"Tuesday, January 15, 2019",53378625.24
+171,Celebrity Fitness,Sports,"Wednesday, January 16, 2019",49705597.07
+172,Celebrity Fitness,Sports,"Thursday, January 17, 2019",45796272.18
+173,Celebrity Fitness,Sports,"Friday, January 18, 2019",53608861.9
+174,Celebrity Fitness,Sports,"Saturday, January 19, 2019",53900614.12
+175,Celebrity Fitness,Sports,"Sunday, January 20, 2019",46425514.66
+176,Celebrity Fitness,Sports,"Monday, January 21, 2019",47964921.17
+177,Celebrity Fitness,Sports,"Tuesday, January 22, 2019",49720104.18
+178,Celebrity Fitness,Sports,"Wednesday, January 23, 2019",53887074.82
+179,Celebrity Fitness,Sports,"Thursday, January 24, 2019",51791742.26
+180,Celebrity Fitness,Sports,"Friday, January 25, 2019",57672062.92
+181,Celebrity Fitness,Sports,"Saturday, January 26, 2019",48172298.36
+182,Celebrity Fitness,Sports,"Sunday, January 27, 2019",51302182.78
+183,Celebrity Fitness,Sports,"Monday, January 28, 2019",55398205.99
+184,Celebrity Fitness,Sports,"Tuesday, January 29, 2019",49338935.74
+185,Celebrity Fitness,Sports,"Wednesday, January 30, 2019",53354285.51
+186,Celebrity Fitness,Sports,"Thursday, January 31, 2019",48298319.64
+187,The Executive,Fashion,"Tuesday, January 1, 2019",24927458.19
+188,The Executive,Fashion,"Wednesday, January 2, 2019",24972255.44
+189,The Executive,Fashion,"Thursday, January 3, 2019",25939241.92
+190,The Executive,Fashion,"Friday, January 4, 2019",25804352.6
+191,The Executive,Fashion,"Saturday, January 5, 2019",27850057.83
+192,The Executive,Fashion,"Sunday, January 6, 2019",26563267.57
+193,The Executive,Fashion,"Monday, January 7, 2019",26850066.71
+194,The Executive,Fashion,"Tuesday, January 8, 2019",27184809.48
+195,The Executive,Fashion,"Wednesday, January 9, 2019",25592544.01
+196,The Executive,Fashion,"Thursday, January 10, 2019",24722740.31
+197,The Executive,Fashion,"Friday, January 11, 2019",27557694.48
+198,The Executive,Fashion,"Saturday, January 12, 2019",22632460.44
+199,The Executive,Fashion,"Sunday, January 13, 2019",25114503.68
+200,The Executive,Fashion,"Monday, January 14, 2019",26874854.68
+201,The Executive,Fashion,"Tuesday, January 15, 2019",26529660.22
+202,The Executive,Fashion,"Wednesday, January 16, 2019",27570885.6
+203,The Executive,Fashion,"Thursday, January 17, 2019",27363192.21
+204,The Executive,Fashion,"Friday, January 18, 2019",25126557.02
+205,The Executive,Fashion,"Saturday, January 19, 2019",27293915.15
+206,The Executive,Fashion,"Sunday, January 20, 2019",27689932.63
+207,The Executive,Fashion,"Monday, January 21, 2019",26923631.94
+208,The Executive,Fashion,"Tuesday, January 22, 2019",26522156.63
+209,The Executive,Fashion,"Wednesday, January 23, 2019",25865746.92
+210,The Executive,Fashion,"Thursday, January 24, 2019",25875952.98
+211,The Executive,Fashion,"Friday, January 25, 2019",26741951.9
+212,The Executive,Fashion,"Saturday, January 26, 2019",25349338.14
+213,The Executive,Fashion,"Sunday, January 27, 2019",25360365.96
+214,The Executive,Fashion,"Monday, January 28, 2019",27993290.74
+215,The Executive,Fashion,"Tuesday, January 29, 2019",26501224.91
+216,The Executive,Fashion,"Wednesday, January 30, 2019",26886910.03
+217,The Executive,Fashion,"Thursday, January 31, 2019",26066536.21
+218,Yoshinoya,F&B,"Tuesday, January 1, 2019",32887550.71
+219,Yoshinoya,F&B,"Wednesday, January 2, 2019",33980800.31
+220,Yoshinoya,F&B,"Thursday, January 3, 2019",34332331.16
+221,Yoshinoya,F&B,"Friday, January 4, 2019",34437923.16
+222,Yoshinoya,F&B,"Saturday, January 5, 2019",34601359.85
+223,Yoshinoya,F&B,"Sunday, January 6, 2019",34814256.74
+224,Yoshinoya,F&B,"Monday, January 7, 2019",34821738.23
+225,Yoshinoya,F&B,"Tuesday, January 8, 2019",34989095.66
+226,Yoshinoya,F&B,"Wednesday, January 9, 2019",35215057.64
+227,Yoshinoya,F&B,"Thursday, January 10, 2019",35435534.62
+228,Yoshinoya,F&B,"Friday, January 11, 2019",35436355.62
+229,Yoshinoya,F&B,"Saturday, January 12, 2019",35487380.8
+230,Yoshinoya,F&B,"Sunday, January 13, 2019",37520003.16
+231,Yoshinoya,F&B,"Monday, January 14, 2019",38124747.26
+232,Yoshinoya,F&B,"Tuesday, January 15, 2019",36385430.37
+233,Yoshinoya,F&B,"Wednesday, January 16, 2019",36503320.22
+234,Yoshinoya,F&B,"Thursday, January 17, 2019",36552149.34
+235,Yoshinoya,F&B,"Friday, January 18, 2019",36563386.6
+236,Yoshinoya,F&B,"Saturday, January 19, 2019",38124747.26
+237,Yoshinoya,F&B,"Sunday, January 20, 2019",39001894.14
+238,Yoshinoya,F&B,"Monday, January 21, 2019",36563386.6
+239,Yoshinoya,F&B,"Tuesday, January 22, 2019",36142244.35
+240,Yoshinoya,F&B,"Wednesday, January 23, 2019",36174148.09
+241,Yoshinoya,F&B,"Thursday, January 24, 2019",37249382.97
+242,Yoshinoya,F&B,"Friday, January 25, 2019",37388714.7
+243,Yoshinoya,F&B,"Saturday, January 26, 2019",37724534.9
+244,Yoshinoya,F&B,"Sunday, January 27, 2019",39001894.14
+245,Yoshinoya,F&B,"Monday, January 28, 2019",37669182.34
+246,Yoshinoya,F&B,"Tuesday, January 29, 2019",36563386.6
+247,Yoshinoya,F&B,"Wednesday, January 30, 2019",36946017.98
+248,Yoshinoya,F&B,"Thursday, January 31, 2019",37724534.9
+249,The Body Shop,Beauty Care,"Tuesday, January 1, 2019",44239788.2
+250,The Body Shop,Beauty Care,"Wednesday, January 2, 2019",44029165.28
+251,The Body Shop,Beauty Care,"Thursday, January 3, 2019",43558052.79
+252,The Body Shop,Beauty Care,"Friday, January 4, 2019",42368415.82
+253,The Body Shop,Beauty Care,"Saturday, January 5, 2019",42302128.42
+254,The Body Shop,Beauty Care,"Sunday, January 6, 2019",41797446.98
+255,The Body Shop,Beauty Care,"Monday, January 7, 2019",40715786.98
+256,The Body Shop,Beauty Care,"Tuesday, January 8, 2019",40106506.72
+257,The Body Shop,Beauty Care,"Wednesday, January 9, 2019",39768106.93
+258,The Body Shop,Beauty Care,"Thursday, January 10, 2019",38577012.8
+259,The Body Shop,Beauty Care,"Friday, January 11, 2019",38532562.32
+260,The Body Shop,Beauty Care,"Saturday, January 12, 2019",37816435.7
+261,The Body Shop,Beauty Care,"Sunday, January 13, 2019",36901982.51
+262,The Body Shop,Beauty Care,"Monday, January 14, 2019",36872386.37
+263,The Body Shop,Beauty Care,"Tuesday, January 15, 2019",36707827.02
+264,The Body Shop,Beauty Care,"Wednesday, January 16, 2019",36688572.77
+265,The Body Shop,Beauty Care,"Thursday, January 17, 2019",36678672.2
+266,The Body Shop,Beauty Care,"Friday, January 18, 2019",36423603.83
+267,The Body Shop,Beauty Care,"Saturday, January 19, 2019",36195361.84
+268,The Body Shop,Beauty Care,"Sunday, January 20, 2019",35145680.56
+269,The Body Shop,Beauty Care,"Monday, January 21, 2019",34962799.29
+270,The Body Shop,Beauty Care,"Tuesday, January 22, 2019",34326389
+271,The Body Shop,Beauty Care,"Wednesday, January 23, 2019",34304136.49
+272,The Body Shop,Beauty Care,"Thursday, January 24, 2019",34272257.21
+273,The Body Shop,Beauty Care,"Friday, January 25, 2019",34173277.86
+274,The Body Shop,Beauty Care,"Saturday, January 26, 2019",33492083.82
+275,The Body Shop,Beauty Care,"Sunday, January 27, 2019",33399765.77
+276,The Body Shop,Beauty Care,"Monday, January 28, 2019",33328098.78
+277,The Body Shop,Beauty Care,"Tuesday, January 29, 2019",33173759.54
+278,The Body Shop,Beauty Care,"Wednesday, January 30, 2019",30931600.44
+279,The Body Shop,Beauty Care,"Thursday, January 31, 2019",28192785.91
+280,Erha Dermatologist,Beauty Care,"Tuesday, January 1, 2019",33212900.73
+281,Erha Dermatologist,Beauty Care,"Wednesday, January 2, 2019",32232169.56
+282,Erha Dermatologist,Beauty Care,"Thursday, January 3, 2019",30984910.64
+283,Erha Dermatologist,Beauty Care,"Friday, January 4, 2019",30863561.8
+284,Erha Dermatologist,Beauty Care,"Saturday, January 5, 2019",30304576.52
+285,Erha Dermatologist,Beauty Care,"Sunday, January 6, 2019",30228840.58
+286,Erha Dermatologist,Beauty Care,"Monday, January 7, 2019",30091331.03
+287,Erha Dermatologist,Beauty Care,"Tuesday, January 8, 2019",29802908.79
+288,Erha Dermatologist,Beauty Care,"Wednesday, January 9, 2019",29751695.65
+289,Erha Dermatologist,Beauty Care,"Thursday, January 10, 2019",29556199.81
+290,Erha Dermatologist,Beauty Care,"Friday, January 11, 2019",29436809.54
+291,Erha Dermatologist,Beauty Care,"Saturday, January 12, 2019",29402167.04
+292,Erha Dermatologist,Beauty Care,"Sunday, January 13, 2019",29368813.47
+293,Erha Dermatologist,Beauty Care,"Monday, January 14, 2019",29336196.89
+294,Erha Dermatologist,Beauty Care,"Tuesday, January 15, 2019",29322350.66
+295,Erha Dermatologist,Beauty Care,"Wednesday, January 16, 2019",28948430
+296,Erha Dermatologist,Beauty Care,"Thursday, January 17, 2019",28607432.78
+297,Erha Dermatologist,Beauty Care,"Friday, January 18, 2019",28385321.52
+298,Erha Dermatologist,Beauty Care,"Saturday, January 19, 2019",28324209.11
+299,Erha Dermatologist,Beauty Care,"Sunday, January 20, 2019",28037001.82
+300,Erha Dermatologist,Beauty Care,"Monday, January 21, 2019",25240648.77
+301,Erha Dermatologist,Beauty Care,"Tuesday, January 22, 2019",25304932.63
+302,Erha Dermatologist,Beauty Care,"Wednesday, January 23, 2019",25639062.37
+303,Erha Dermatologist,Beauty Care,"Thursday, January 24, 2019",26843070.73
+304,Erha Dermatologist,Beauty Care,"Friday, January 25, 2019",26750580.16
+305,Erha Dermatologist,Beauty Care,"Saturday, January 26, 2019",26567215.62
+306,Erha Dermatologist,Beauty Care,"Sunday, January 27, 2019",25656390.06
+307,Erha Dermatologist,Beauty Care,"Monday, January 28, 2019",26914871.14
+308,Erha Dermatologist,Beauty Care,"Tuesday, January 29, 2019",27109506.57
+309,Erha Dermatologist,Beauty Care,"Wednesday, January 30, 2019",27142259.5
+310,Erha Dermatologist,Beauty Care,"Thursday, January 31, 2019",27315652.03
+311,Sport Station,Sports,"Tuesday, January 1, 2019",66383307.07
+312,Sport Station,Sports,"Wednesday, January 2, 2019",55876347.66
+313,Sport Station,Sports,"Thursday, January 3, 2019",53845516.17
+314,Sport Station,Sports,"Friday, January 4, 2019",50717974.15
+315,Sport Station,Sports,"Saturday, January 5, 2019",48154641.07
+316,Sport Station,Sports,"Sunday, January 6, 2019",47749746.69
+317,Sport Station,Sports,"Monday, January 7, 2019",47597721.54
+318,Sport Station,Sports,"Tuesday, January 8, 2019",39679805.93
+319,Sport Station,Sports,"Wednesday, January 9, 2019",39559224.52
+320,Sport Station,Sports,"Thursday, January 10, 2019",38968422.85
+321,Sport Station,Sports,"Friday, January 11, 2019",38418346.89
+322,Sport Station,Sports,"Saturday, January 12, 2019",37863371.07
+323,Sport Station,Sports,"Sunday, January 13, 2019",36035784.14
+324,Sport Station,Sports,"Monday, January 14, 2019",35829889.74
+325,Sport Station,Sports,"Tuesday, January 15, 2019",33577559.02
+326,Sport Station,Sports,"Wednesday, January 16, 2019",33502180.19
+327,Sport Station,Sports,"Thursday, January 17, 2019",30971643.34
+328,Sport Station,Sports,"Friday, January 18, 2019",29789356.16
+329,Sport Station,Sports,"Saturday, January 19, 2019",29663793.04
+330,Sport Station,Sports,"Sunday, January 20, 2019",26782953.82
+331,Sport Station,Sports,"Monday, January 21, 2019",23825316.23
+332,Sport Station,Sports,"Tuesday, January 22, 2019",21854493.72
+333,Sport Station,Sports,"Wednesday, January 23, 2019",20532915.48
+334,Sport Station,Sports,"Thursday, January 24, 2019",18588629.52
+335,Sport Station,Sports,"Friday, January 25, 2019",15707948.99
+336,Sport Station,Sports,"Saturday, January 26, 2019",14356026.75
+337,Sport Station,Sports,"Sunday, January 27, 2019",9543639.187
+338,Sport Station,Sports,"Monday, January 28, 2019",9271960.594
+339,Sport Station,Sports,"Tuesday, January 29, 2019",612430.7507
+340,Sport Station,Sports,"Wednesday, January 30, 2019",220620.6298
+341,Sport Station,Sports,"Thursday, January 31, 2019",-12409298.27
+342,Fossil,Fashion,"Tuesday, January 1, 2019",13147675.46
+343,Fossil,Fashion,"Wednesday, January 2, 2019",14149318.45
+344,Fossil,Fashion,"Thursday, January 3, 2019",14759297.15
+345,Fossil,Fashion,"Friday, January 4, 2019",14826971.67
+346,Fossil,Fashion,"Saturday, January 5, 2019",15826174.56
+347,Fossil,Fashion,"Sunday, January 6, 2019",16416655.25
+348,Fossil,Fashion,"Monday, January 7, 2019",17172517.22
+349,Fossil,Fashion,"Tuesday, January 8, 2019",17175932.37
+350,Fossil,Fashion,"Wednesday, January 9, 2019",17281177.63
+351,Fossil,Fashion,"Thursday, January 10, 2019",18672537.52
+352,Fossil,Fashion,"Friday, January 11, 2019",18828644.98
+353,Fossil,Fashion,"Saturday, January 12, 2019",19788082.26
+354,Fossil,Fashion,"Sunday, January 13, 2019",20335796.32
+355,Fossil,Fashion,"Monday, January 14, 2019",22237951.88
+356,Fossil,Fashion,"Tuesday, January 15, 2019",22463042.19
+357,Fossil,Fashion,"Wednesday, January 16, 2019",22582211.79
+358,Fossil,Fashion,"Thursday, January 17, 2019",22837001.54
+359,Fossil,Fashion,"Friday, January 18, 2019",22972433.43
+360,Fossil,Fashion,"Saturday, January 19, 2019",23055735.87
+361,Fossil,Fashion,"Sunday, January 20, 2019",23072260.61
+362,Fossil,Fashion,"Monday, January 21, 2019",23320647.3
+363,Fossil,Fashion,"Tuesday, January 22, 2019",23467293.74
+364,Fossil,Fashion,"Wednesday, January 23, 2019",24414967.29
+365,Fossil,Fashion,"Thursday, January 24, 2019",25011056.14
+366,Fossil,Fashion,"Friday, January 25, 2019",26101655.16
+367,Fossil,Fashion,"Saturday, January 26, 2019",26529496.14
+368,Fossil,Fashion,"Sunday, January 27, 2019",28360989.85
+369,Fossil,Fashion,"Monday, January 28, 2019",28912684.11
+370,Fossil,Fashion,"Tuesday, January 29, 2019",29339903.72
+371,Fossil,Fashion,"Wednesday, January 30, 2019",31683101.27
+372,Fossil,Fashion,"Thursday, January 31, 2019",34239363.14
+373,Gramedia,Hobby&Entertainment,"Tuesday, January 1, 2019",80150942.24
+374,Gramedia,Hobby&Entertainment,"Wednesday, January 2, 2019",79524084.81
+375,Gramedia,Hobby&Entertainment,"Thursday, January 3, 2019",83889309.3
+376,Gramedia,Hobby&Entertainment,"Friday, January 4, 2019",83628055.99
+377,Gramedia,Hobby&Entertainment,"Saturday, January 5, 2019",82671059.06
+378,Gramedia,Hobby&Entertainment,"Sunday, January 6, 2019",87237075.4
+379,Gramedia,Hobby&Entertainment,"Monday, January 7, 2019",84588204.49
+380,Gramedia,Hobby&Entertainment,"Tuesday, January 8, 2019",78840271.6
+381,Gramedia,Hobby&Entertainment,"Wednesday, January 9, 2019",78827008.19
+382,Gramedia,Hobby&Entertainment,"Thursday, January 10, 2019",78812408.43
+383,Gramedia,Hobby&Entertainment,"Friday, January 11, 2019",76127534.14
+384,Gramedia,Hobby&Entertainment,"Saturday, January 12, 2019",78812408.43
+385,Gramedia,Hobby&Entertainment,"Sunday, January 13, 2019",77400978.06
+386,Gramedia,Hobby&Entertainment,"Monday, January 14, 2019",78686985.81
+387,Gramedia,Hobby&Entertainment,"Tuesday, January 15, 2019",77519860.88
+388,Gramedia,Hobby&Entertainment,"Wednesday, January 16, 2019",76441485.3
+389,Gramedia,Hobby&Entertainment,"Thursday, January 17, 2019",76357171.84
+390,Gramedia,Hobby&Entertainment,"Friday, January 18, 2019",76127534.14
+391,Gramedia,Hobby&Entertainment,"Saturday, January 19, 2019",75889502.64
+392,Gramedia,Hobby&Entertainment,"Sunday, January 20, 2019",75386918.43
+393,Gramedia,Hobby&Entertainment,"Monday, January 21, 2019",75318580.03
+394,Gramedia,Hobby&Entertainment,"Tuesday, January 22, 2019",75148915.2
+395,Gramedia,Hobby&Entertainment,"Wednesday, January 23, 2019",74193146.38
+396,Gramedia,Hobby&Entertainment,"Thursday, January 24, 2019",74066942.08
+397,Gramedia,Hobby&Entertainment,"Friday, January 25, 2019",73725760.93
+398,Gramedia,Hobby&Entertainment,"Saturday, January 26, 2019",73118383.96
+399,Gramedia,Hobby&Entertainment,"Sunday, January 27, 2019",72301948.47
+400,Gramedia,Hobby&Entertainment,"Monday, January 28, 2019",70946986.74
+401,Gramedia,Hobby&Entertainment,"Tuesday, January 29, 2019",69918705.31
+402,Gramedia,Hobby&Entertainment,"Wednesday, January 30, 2019",67944491.83
+403,Gramedia,Hobby&Entertainment,"Thursday, January 31, 2019",66137210.6
+404,Kopi Kenangan,F&B,"Tuesday, January 1, 2019",19947462.01
+405,Kopi Kenangan,F&B,"Wednesday, January 2, 2019",20528692.6
+406,Kopi Kenangan,F&B,"Thursday, January 3, 2019",25640197.11
+407,Kopi Kenangan,F&B,"Friday, January 4, 2019",25695218.21
+408,Kopi Kenangan,F&B,"Saturday, January 5, 2019",26609275.28
+409,Kopi Kenangan,F&B,"Sunday, January 6, 2019",27416880.66
+410,Kopi Kenangan,F&B,"Monday, January 7, 2019",28643715.92
+411,Kopi Kenangan,F&B,"Tuesday, January 8, 2019",28821622.25
+412,Kopi Kenangan,F&B,"Wednesday, January 9, 2019",28886809.7
+413,Kopi Kenangan,F&B,"Thursday, January 10, 2019",30152545.76
+414,Kopi Kenangan,F&B,"Friday, January 11, 2019",30167173.43
+415,Kopi Kenangan,F&B,"Saturday, January 12, 2019",31476729.23
+416,Kopi Kenangan,F&B,"Sunday, January 13, 2019",31554688.01
+417,Kopi Kenangan,F&B,"Monday, January 14, 2019",31950275.14
+418,Kopi Kenangan,F&B,"Tuesday, January 15, 2019",32242321.33
+419,Kopi Kenangan,F&B,"Wednesday, January 16, 2019",32255464.75
+420,Kopi Kenangan,F&B,"Thursday, January 17, 2019",32548836.33
+421,Kopi Kenangan,F&B,"Friday, January 18, 2019",32699149.88
+422,Kopi Kenangan,F&B,"Saturday, January 19, 2019",33156688.85
+423,Kopi Kenangan,F&B,"Sunday, January 20, 2019",33754172.63
+424,Kopi Kenangan,F&B,"Monday, January 21, 2019",33765793.21
+425,Kopi Kenangan,F&B,"Tuesday, January 22, 2019",33995979.54
+426,Kopi Kenangan,F&B,"Wednesday, January 23, 2019",34207224.23
+427,Kopi Kenangan,F&B,"Thursday, January 24, 2019",34259019.31
+428,Kopi Kenangan,F&B,"Friday, January 25, 2019",34350427.54
+429,Kopi Kenangan,F&B,"Saturday, January 26, 2019",34501689.5
+430,Kopi Kenangan,F&B,"Sunday, January 27, 2019",34790478.84
+431,Kopi Kenangan,F&B,"Monday, January 28, 2019",34947442.77
+432,Kopi Kenangan,F&B,"Tuesday, January 29, 2019",36190224.84
+433,Kopi Kenangan,F&B,"Wednesday, January 30, 2019",40531251.84
+434,Kopi Kenangan,F&B,"Thursday, January 31, 2019",40986924.4
+435,Pandora,Hobby&Entertainment,"Tuesday, January 1, 2019",72113198.83
+436,Pandora,Hobby&Entertainment,"Wednesday, January 2, 2019",45351543.46
+437,Pandora,Hobby&Entertainment,"Thursday, January 3, 2019",48691280.89
+438,Pandora,Hobby&Entertainment,"Friday, January 4, 2019",78332168.61
+439,Pandora,Hobby&Entertainment,"Saturday, January 5, 2019",83619588.41
+440,Pandora,Hobby&Entertainment,"Sunday, January 6, 2019",85526269.48
+441,Pandora,Hobby&Entertainment,"Monday, January 7, 2019",50075175
+442,Pandora,Hobby&Entertainment,"Tuesday, January 8, 2019",64409674.83
+443,Pandora,Hobby&Entertainment,"Wednesday, January 9, 2019",76792217.63
+444,Pandora,Hobby&Entertainment,"Thursday, January 10, 2019",51137917.64
+445,Pandora,Hobby&Entertainment,"Friday, January 11, 2019",92880595.44
+446,Pandora,Hobby&Entertainment,"Saturday, January 12, 2019",53661639.21
+447,Pandora,Hobby&Entertainment,"Sunday, January 13, 2019",43126168.2
+448,Pandora,Hobby&Entertainment,"Monday, January 14, 2019",97620461.53
+449,Pandora,Hobby&Entertainment,"Tuesday, January 15, 2019",57430731.54
+450,Pandora,Hobby&Entertainment,"Wednesday, January 16, 2019",108063764.9
+451,Pandora,Hobby&Entertainment,"Thursday, January 17, 2019",123325374.1
+452,Pandora,Hobby&Entertainment,"Friday, January 18, 2019",113413099.4
+453,Pandora,Hobby&Entertainment,"Saturday, January 19, 2019",63821926.49
+454,Pandora,Hobby&Entertainment,"Sunday, January 20, 2019",64591468.37
+455,Pandora,Hobby&Entertainment,"Monday, January 21, 2019",92407417.74
+456,Pandora,Hobby&Entertainment,"Tuesday, January 22, 2019",74685198.52
+457,Pandora,Hobby&Entertainment,"Wednesday, January 23, 2019",87813799.86
+458,Pandora,Hobby&Entertainment,"Thursday, January 24, 2019",64952086.67
+459,Pandora,Hobby&Entertainment,"Friday, January 25, 2019",63457009.41
+460,Pandora,Hobby&Entertainment,"Saturday, January 26, 2019",35558903.07
+461,Pandora,Hobby&Entertainment,"Sunday, January 27, 2019",41935270.91
+462,Pandora,Hobby&Entertainment,"Monday, January 28, 2019",11677885.38
+463,Pandora,Hobby&Entertainment,"Tuesday, January 29, 2019",54873454.49
+464,Pandora,Hobby&Entertainment,"Wednesday, January 30, 2019",100880648.5
+465,Pandora,Hobby&Entertainment,"Thursday, January 31, 2019",88431788.64
+466,Uniqlo,Fashion,"Tuesday, January 1, 2019",70540434.95
+467,Uniqlo,Fashion,"Wednesday, January 2, 2019",84799075.99
+468,Uniqlo,Fashion,"Thursday, January 3, 2019",74279507.18
+469,Uniqlo,Fashion,"Friday, January 4, 2019",64487829.09
+470,Uniqlo,Fashion,"Saturday, January 5, 2019",79529478.55
+471,Uniqlo,Fashion,"Sunday, January 6, 2019",88754207.76
+472,Uniqlo,Fashion,"Monday, January 7, 2019",85737294.3
+473,Uniqlo,Fashion,"Tuesday, January 8, 2019",65060179.76
+474,Uniqlo,Fashion,"Wednesday, January 9, 2019",92760228.71
+475,Uniqlo,Fashion,"Thursday, January 10, 2019",80839231.32
+476,Uniqlo,Fashion,"Friday, January 11, 2019",96746460.35
+477,Uniqlo,Fashion,"Saturday, January 12, 2019",83485098.07
+478,Uniqlo,Fashion,"Sunday, January 13, 2019",69253824.62
+479,Uniqlo,Fashion,"Monday, January 14, 2019",93733978.38
+480,Uniqlo,Fashion,"Tuesday, January 15, 2019",89191614.04
+481,Uniqlo,Fashion,"Wednesday, January 16, 2019",78051386.15
+482,Uniqlo,Fashion,"Thursday, January 17, 2019",83017311.51
+483,Uniqlo,Fashion,"Friday, January 18, 2019",87507205.9
+484,Uniqlo,Fashion,"Saturday, January 19, 2019",74550604.4
+485,Uniqlo,Fashion,"Sunday, January 20, 2019",81033926.62
+486,Uniqlo,Fashion,"Monday, January 21, 2019",70808632.96
+487,Uniqlo,Fashion,"Tuesday, January 22, 2019",69526979.18
+488,Uniqlo,Fashion,"Wednesday, January 23, 2019",77804840.95
+489,Uniqlo,Fashion,"Thursday, January 24, 2019",70267444.34
+490,Uniqlo,Fashion,"Friday, January 25, 2019",82904130.36
+491,Uniqlo,Fashion,"Saturday, January 26, 2019",81158741
+492,Uniqlo,Fashion,"Sunday, January 27, 2019",75762099.73
+493,Uniqlo,Fashion,"Monday, January 28, 2019",74204965.48
+494,Uniqlo,Fashion,"Tuesday, January 29, 2019",80547897.25
+495,Uniqlo,Fashion,"Wednesday, January 30, 2019",74033734.7
+496,Uniqlo,Fashion,"Thursday, January 31, 2019",88436084.9
+497,KOI,F&B,"Tuesday, January 1, 2019",36233243.86
+498,KOI,F&B,"Wednesday, January 2, 2019",38013271.49
+499,KOI,F&B,"Thursday, January 3, 2019",39039781.91
+500,KOI,F&B,"Friday, January 4, 2019",41557364.54
+501,KOI,F&B,"Saturday, January 5, 2019",43496567.2
+502,KOI,F&B,"Sunday, January 6, 2019",43799120.81
+503,KOI,F&B,"Monday, January 7, 2019",44263537.69
+504,KOI,F&B,"Tuesday, January 8, 2019",45218784.85
+505,KOI,F&B,"Wednesday, January 9, 2019",46929053.53
+506,KOI,F&B,"Thursday, January 10, 2019",47108237.85
+507,KOI,F&B,"Friday, January 11, 2019",47742293.89
+508,KOI,F&B,"Saturday, January 12, 2019",48570500.36
+509,KOI,F&B,"Sunday, January 13, 2019",48773924.77
+510,KOI,F&B,"Monday, January 14, 2019",49249994.5
+511,KOI,F&B,"Tuesday, January 15, 2019",49440358.57
+512,KOI,F&B,"Wednesday, January 16, 2019",50392627.66
+513,KOI,F&B,"Thursday, January 17, 2019",51076619.36
+514,KOI,F&B,"Friday, January 18, 2019",51091681.36
+515,KOI,F&B,"Saturday, January 19, 2019",51166816.74
+516,KOI,F&B,"Sunday, January 20, 2019",51251145.42
+517,KOI,F&B,"Monday, January 21, 2019",51342901.12
+518,KOI,F&B,"Tuesday, January 22, 2019",53105467.14
+519,KOI,F&B,"Wednesday, January 23, 2019",53703050.8
+520,KOI,F&B,"Thursday, January 24, 2019",54249739.8
+521,KOI,F&B,"Friday, January 25, 2019",55462962.39
+522,KOI,F&B,"Saturday, January 26, 2019",55930832.39
+523,KOI,F&B,"Sunday, January 27, 2019",56158133.85
+524,KOI,F&B,"Monday, January 28, 2019",56522075.32
+525,KOI,F&B,"Tuesday, January 29, 2019",58446343.77
+526,KOI,F&B,"Wednesday, January 30, 2019",59274521.63
+527,KOI,F&B,"Thursday, January 31, 2019",61124814.76
+528,Miniso,Daily utilities,"Tuesday, January 1, 2019",66988046.13
+529,Miniso,Daily utilities,"Wednesday, January 2, 2019",65020049.73
+530,Miniso,Daily utilities,"Thursday, January 3, 2019",64014757.3
+531,Miniso,Daily utilities,"Friday, January 4, 2019",63952070.43
+532,Miniso,Daily utilities,"Saturday, January 5, 2019",63722119.16
+533,Miniso,Daily utilities,"Sunday, January 6, 2019",63278373.29
+534,Miniso,Daily utilities,"Monday, January 7, 2019",63073200.57
+535,Miniso,Daily utilities,"Tuesday, January 8, 2019",62453654.91
+536,Miniso,Daily utilities,"Wednesday, January 9, 2019",62055334.53
+537,Miniso,Daily utilities,"Thursday, January 10, 2019",61955610.19
+538,Miniso,Daily utilities,"Friday, January 11, 2019",61680278.52
+539,Miniso,Daily utilities,"Saturday, January 12, 2019",61322237.64
+540,Miniso,Daily utilities,"Sunday, January 13, 2019",61290192.65
+541,Miniso,Daily utilities,"Monday, January 14, 2019",61004267.07
+542,Miniso,Daily utilities,"Tuesday, January 15, 2019",60598339.63
+543,Miniso,Daily utilities,"Wednesday, January 16, 2019",60433176.73
+544,Miniso,Daily utilities,"Thursday, January 17, 2019",60022276.7
+545,Miniso,Daily utilities,"Friday, January 18, 2019",59941099.06
+546,Miniso,Daily utilities,"Saturday, January 19, 2019",59660307.07
+547,Miniso,Daily utilities,"Sunday, January 20, 2019",59452918.43
+548,Miniso,Daily utilities,"Monday, January 21, 2019",59193840.63
+549,Miniso,Daily utilities,"Tuesday, January 22, 2019",59192623.09
+550,Miniso,Daily utilities,"Wednesday, January 23, 2019",58721975.92
+551,Miniso,Daily utilities,"Thursday, January 24, 2019",58714018.19
+552,Miniso,Daily utilities,"Friday, January 25, 2019",58128664.28
+553,Miniso,Daily utilities,"Saturday, January 26, 2019",57429246.53
+554,Miniso,Daily utilities,"Sunday, January 27, 2019",57423320.36
+555,Miniso,Daily utilities,"Monday, January 28, 2019",57156726.98
+556,Miniso,Daily utilities,"Tuesday, January 29, 2019",56159496.99
+557,Miniso,Daily utilities,"Wednesday, January 30, 2019",55141393.43
+558,Miniso,Daily utilities,"Thursday, January 31, 2019",55031761.6
+559,Daiso,Daily utilities,"Tuesday, January 1, 2019",15305027.77
+560,Daiso,Daily utilities,"Wednesday, January 2, 2019",15224197.04
+561,Daiso,Daily utilities,"Thursday, January 3, 2019",17100768.8
+562,Daiso,Daily utilities,"Friday, January 4, 2019",15182773.6
+563,Daiso,Daily utilities,"Saturday, January 5, 2019",14734817.93
+564,Daiso,Daily utilities,"Sunday, January 6, 2019",14822859.68
+565,Daiso,Daily utilities,"Monday, January 7, 2019",14241792.78
+566,Daiso,Daily utilities,"Tuesday, January 8, 2019",15934534.24
+567,Daiso,Daily utilities,"Wednesday, January 9, 2019",15955144.1
+568,Daiso,Daily utilities,"Thursday, January 10, 2019",15335304.19
+569,Daiso,Daily utilities,"Friday, January 11, 2019",14512502.05
+570,Daiso,Daily utilities,"Saturday, January 12, 2019",15109110.8
+571,Daiso,Daily utilities,"Sunday, January 13, 2019",15630524.32
+572,Daiso,Daily utilities,"Monday, January 14, 2019",14952263.77
+573,Daiso,Daily utilities,"Tuesday, January 15, 2019",15797127.37
+574,Daiso,Daily utilities,"Wednesday, January 16, 2019",16085663.68
+575,Daiso,Daily utilities,"Thursday, January 17, 2019",14483004.7
+576,Daiso,Daily utilities,"Friday, January 18, 2019",14239023.98
+577,Daiso,Daily utilities,"Saturday, January 19, 2019",15289703.11
+578,Daiso,Daily utilities,"Sunday, January 20, 2019",15267851.83
+579,Daiso,Daily utilities,"Monday, January 21, 2019",15362824.95
+580,Daiso,Daily utilities,"Tuesday, January 22, 2019",14783846.57
+581,Daiso,Daily utilities,"Wednesday, January 23, 2019",14099733.65
+582,Daiso,Daily utilities,"Thursday, January 24, 2019",15650025.68
+583,Daiso,Daily utilities,"Friday, January 25, 2019",16159019.51
+584,Daiso,Daily utilities,"Saturday, January 26, 2019",16086490.82
+585,Daiso,Daily utilities,"Sunday, January 27, 2019",15218597.52
+586,Daiso,Daily utilities,"Monday, January 28, 2019",15052525.46
+587,Daiso,Daily utilities,"Tuesday, January 29, 2019",16046343.92
+588,Daiso,Daily utilities,"Wednesday, January 30, 2019",14818710.2
+589,Daiso,Daily utilities,"Thursday, January 31, 2019",15346504.77
+590,CGV,Hobby&Entertainment,"Tuesday, January 1, 2019",87680823.65
+591,CGV,Hobby&Entertainment,"Wednesday, January 2, 2019",88473925.99
+592,CGV,Hobby&Entertainment,"Thursday, January 3, 2019",86865894.34
+593,CGV,Hobby&Entertainment,"Friday, January 4, 2019",88967746.93
+594,CGV,Hobby&Entertainment,"Saturday, January 5, 2019",89817927.17
+595,CGV,Hobby&Entertainment,"Sunday, January 6, 2019",89543505.56
+596,CGV,Hobby&Entertainment,"Monday, January 7, 2019",86658388.81
+597,CGV,Hobby&Entertainment,"Tuesday, January 8, 2019",86599446.37
+598,CGV,Hobby&Entertainment,"Wednesday, January 9, 2019",85968346.47
+599,CGV,Hobby&Entertainment,"Thursday, January 10, 2019",85839703.38
+600,CGV,Hobby&Entertainment,"Friday, January 11, 2019",85575986.71
+601,CGV,Hobby&Entertainment,"Saturday, January 12, 2019",84975196.49
+602,CGV,Hobby&Entertainment,"Sunday, January 13, 2019",85017636.54
+603,CGV,Hobby&Entertainment,"Monday, January 14, 2019",84974471.8
+604,CGV,Hobby&Entertainment,"Tuesday, January 15, 2019",84876738.8
+605,CGV,Hobby&Entertainment,"Wednesday, January 16, 2019",83125655.49
+606,CGV,Hobby&Entertainment,"Thursday, January 17, 2019",83216733.09
+607,CGV,Hobby&Entertainment,"Friday, January 18, 2019",83840807.46
+608,CGV,Hobby&Entertainment,"Saturday, January 19, 2019",84351934.5
+609,CGV,Hobby&Entertainment,"Sunday, January 20, 2019",84059175.44
+610,CGV,Hobby&Entertainment,"Monday, January 21, 2019",84026904.34
+611,CGV,Hobby&Entertainment,"Tuesday, January 22, 2019",83840807.46
+612,CGV,Hobby&Entertainment,"Wednesday, January 23, 2019",83216733.09
+613,CGV,Hobby&Entertainment,"Thursday, January 24, 2019",83125655.49
+614,CGV,Hobby&Entertainment,"Friday, January 25, 2019",82649284.81
+615,CGV,Hobby&Entertainment,"Saturday, January 26, 2019",83924865.62
+616,CGV,Hobby&Entertainment,"Sunday, January 27, 2019",84696779.49
+617,CGV,Hobby&Entertainment,"Monday, January 28, 2019",80268854.36
+618,CGV,Hobby&Entertainment,"Tuesday, January 29, 2019",78117244.38
+619,CGV,Hobby&Entertainment,"Wednesday, January 30, 2019",77078820.77
+620,CGV,Hobby&Entertainment,"Thursday, January 31, 2019",76247334.69

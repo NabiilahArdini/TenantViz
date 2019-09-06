@@ -1,0 +1,245 @@
+---
+title: "Mall Management - Association Rules"
+author: "Nabiilah Ardini Fauziyyah"
+date: "9/2/2019"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    higlight: kate
+    df_print: paged
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Import Library
+```{r message=FALSE, warning=FALSE}
+library(dplyr) # for data wrangling
+library(tidyr) # for data wrangling
+library(stringr) # for data wrangling
+library(arules) # for association rules analysis
+library(visNetwork) # for Vizualization Network
+```
+
+## Read Data
+
+The mall dummy data contains Date, Costumer ID (code), and various mall tenants which were visited on each day by each costumer (marked by 1 (visited)).
+
+```{r}
+mall <- read.csv("dummy_arules.csv")
+transactional <- mall %>% 
+  gather(Tenant, Value, 3:22) %>% 
+  filter(Value == 1) %>% 
+  select(-Value) %>% 
+  filter(CostumerID  != '') %>% 
+  arrange(Date, CostumerID) 
+
+write.csv(transactional, "dummy_mall/transactions.csv", row.names = FALSE)
+```
+
+```{r}
+price_range <- data.frame(tenant=unique(transactional$Tenant), mean = c(0, 50000, 25000, 120000, 27000, 500000, 18000, 50000, 200000, 300000, 500000, 300000, 800000, 35000, 300000, 700000, 50000, 50000, 1000000, 750000), sd = c(750000, 5000, 5000, 80000, 15000, 150000, 5000, 30000, 100000, 300000, 300000, 200000, 300000, 10000, 150000, 500000, 30000, 30000, 300000, 200000))
+
+price_est <- function(x){
+  attr <- price_range %>% 
+    filter(tenant == x)
+  
+  return(rnorm(1, attr$mean, attr$sd))
+}
+
+price_est('Uniqlo')
+
+transactional %>% 
+  mutate(
+    DiscountVoucher = 0,
+    SalesSubTotal = round(abs(purrr::map(Tenant, price_est) %>% unlist))
+  )
+```
+
+```{r}
+dat <- tibble::tibble(
+  Precinct = c(1, 1, 1, 2),
+  Crime = c("Murder", "Rape", "Burglary", "Murder"),
+  `2000` = c(3, 12, 252, 4),
+  `2001` = c(1, 5, 188, 2),
+  `2002` = c(2, 10, 297, 1),
+  `2003` = c(2, 11, 403, 0)
+)
+
+dat
+
+tidyr::gather(dat, Year, Value, 3:6)
+tidyr::gather(dat, Year, Value, -Precinct, -Crime)
+```
+
+
+### Transactional to Matrix
+
+```{r}
+transactional %>% 
+  select(Date, CostumerID, Tenant) %>% 
+  mutate(
+    Indicator = 1
+  ) %>% 
+  spread(Tenant, Indicator, fill=0)
+```
+
+
+## Pre-process Data
+
+**Apriori algorithm** for **Association Rules** analysis in R can only process data in (or can be transformed into) transaction format. To make one, we can change the structure of our data into a *basket format* and then a *transaction format*.   
+
+```{r message=FALSE, warning=FALSE}
+# making a basket format - 3 days, 6 Tenants
+mgat <- mall[,c(1:8)] %>% 
+  filter(Date==c("1/1/2019", "1/2/2019", "1/3/2019")) %>% # filter for each day visit
+  gather(key, value, -CostumerID, -Date) %>% 
+  filter(value == 1) %>% # indicates visit
+  select(-value) %>% # clean off
+  mutate(Tenant=as.factor(key)) %>% # making factor for basket format
+  select(-key) # clean off
+
+class(mgat)
+mgat
+```
+
+```{r}
+# changing data.frame into a list (basket) format
+basket <- split(x = mgat$Tenant, # column to be splitted into groups
+                f = list(mgat$CostumerID,mgat$Date), # splitted column to be grouped by..
+                drop = T) # drop groups which have no item (Tenant)
+
+class(basket)
+basket
+```
+
+```{r}
+# changing list into transaction format
+trans <- as(basket, "transactions")
+trans
+```
+
+## Arules
+
+For mall management analysis, we would like to see the importance of each tenant on the mall's popularity/significance, which can be seen through how much costumers visit each tenant on a daily basis. We would also like to see the relationship between each tenant to the other tenants in terms of visitor amount. This might give us valuable informations on decision making when a Mall wants to drop a contract with a spesific tenant, etc. 
+
+These informations can be derived from the **Support** of a tenant and the **Lift** between spesific tenants obtained from the apriori algorithms:
+
+**Support**: The support of an item X, `supp(X)` is the proportion of transaction in the database in which the item X appears. **It signifies the popularity of an item.**
+
+**Lift**: This signifies **the likelihood of the item Y being purchased when item X is purchased** while taking into account the popularity (support) of item X and item Y.
+
+**In mall management analysis, the item is the tenant.*
+
+### Support of Tenants
+
+```{r}
+# finding Support of Tenants
+tenant.support <- data.frame(Tenant = names(itemFrequency(trans)),
+                             Support = itemFrequency(trans))
+rownames(tenant.support) <- NULL
+tenant.support    
+itemFrequencyPlot(trans)
+
+# save as csv
+# write.csv(tenant.support, "tenant.sup.csv")
+```
+
+### Lift of Tenants
+
+```{r}
+# making association rules
+mall_arules <- apriori(data = trans,
+                       parameter = list(confidence = 0.5),
+                       control = list(verbose = F))
+mall_arules
+```
+
+```{r}
+# to retrieve the first 10 rules
+inspect(mall_arules[1:10,])
+```
+
+```{r}
+# to retrieve the lift of other tenants (X) to a Y tenant 
+# eg: what tenants affect the visitor amount of CGV? 
+
+CGV_rules <- apriori(data = trans, 
+                     parameter = list(conf=0.5, 
+                                      maxlen = 2), 
+                                      #maxlen specify how many items can be present in one rule
+                     appearance = list(default="lhs", rhs ="CGV"))
+
+inspect(CGV_rules)
+```
+
+```{r}
+lift <- data.frame(inspect(CGV_rules))
+lift %>% 
+  select(lhs, rhs, lift)
+```
+
+```{r}
+# finding all X to Y rules
+all_rules <- apriori(data = trans, 
+                     parameter = list(conf=0.8, maxlen = 2),
+                     control = list(verbose = F))
+
+all_lift <- DATAFRAME(all_rules)
+all_lift <- all_lift %>% 
+  filter(LHS != "{}") %>% 
+  select(LHS, RHS, lift)
+all_lift
+```
+
+```{r}
+# Remove duplicated rules (X -> Y = Y -> X)?
+
+# clean data
+fix_lift <- all_lift %>%
+  mutate(LHS = as.character(LHS),
+         RHS = as.character(RHS)) %>% 
+  mutate(LHS = str_replace_all(LHS, "\\{|\\}", ""),
+         RHS = str_replace_all(RHS, "\\{|\\}", ""))
+
+names(fix_lift) <- c("Tenant1", "Tenant2", "Lift")
+
+fix_lift
+
+# save as csv
+# write.csv(fix_lift, "tenant.lift.csv")
+```
+
+After we have the support and lift of each tenant, we can use the data to be plotted in a Visualization Network.
+
+## Map to VizNetwork
+
+```{r}
+# data preparation
+tenant.support <- tenant.support %>% 
+  # mutate(id = row(tenant.support)[,1])
+  rename(id = Tenant, value = Support)
+tenant.support
+```
+
+```{r}
+fix_lift <- fix_lift %>% 
+  rename(from = Tenant1, to = Tenant2,
+         weight = Lift)
+
+fix_lift
+```
+
+```{r}
+set.seed(100)
+visNetwork(nodes = tenant.support,
+           edges = fix_lift,
+           width = "100%") %>%
+  visLegend() %>%
+  visOptions(nodesIdSelection = T,
+             highlightNearest = T)
+```

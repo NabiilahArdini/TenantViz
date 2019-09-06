@@ -1,0 +1,55 @@
+---
+title: "Data Sample Transaction"
+author: "Tiara Dwiputri"
+date: "28th August 2019"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+    self_contained: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Last Progress Summary
+
+The following will be the mockup for tenant graphs. It is interactive and you can click a certain node to be able to identify other tenants that is directly related to itself.
+
+```{r, echo=FALSE}
+library(visNetwork)
+library(tidygraph)
+
+set.seed(100)
+
+tenant<-read.csv("tenants.csv", sep=";") %>% 
+  rename(id=Id, label=Tenant,group=Group) %>% 
+  mutate(size=30*FinStab)
+
+syn<-read.csv("syn.csv") %>% 
+  select(-X) %>% 
+  mutate(width=ifelse(weight>0.9,weight,-weight)) %>% 
+  mutate(color=ifelse(weight>0.9,"Blue","Red")) %>% 
+  mutate(width=width^5*10)
+
+visNetwork(nodes=tenant,edges=syn,width="100%") %>% 
+  visLegend() %>% 
+  visOptions(nodesIdSelection = T,highlightNearest = T) 
+```
+
+Each 
+
+# Existing Sample Data
+
+```{r}
+library(dplyr)
+library(readxl)
+
+report <- read_excel("report.xlsx", sheet = "report", range = "A86:Q317") %>% 
+  mutate_if(is.character, factor)
+
+levels(report$`Sub Category`)
+```
+

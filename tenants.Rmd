@@ -1,0 +1,78 @@
+---
+title: "Tenants Graph"
+author: "Steven Surya Tanujaya"
+date: "August 12, 2019"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+    self_contained: true
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Background
+
+Graph visualization can be implented in order to visualize entities relationship. The value we are trying to bring in is the ability to assess one tenant's value by 2 main metrics: Financial value and synergy to other tenants. The idea is the following: in order to manage and sort a highly valuable tenants, we need to be able to identify how much the tenant's financial value it can brought in, and how does the business itself affect other tenants (synergy). A high synergy relationship will also indicates how the tenants will attract a same group of customers.
+
+To illustrate, we'll generate some dummy data of possible Mall tenants.
+
+# Data Preparation
+
+```{r message=FALSE, warning=FALSE}
+library(tidygraph)
+
+tenant<-read.csv("tenants.csv", sep=";") %>% 
+  rename(id=Id, label=Tenant,group=Group) %>% 
+  mutate(size=30*FinStab)
+
+tenant
+```
+
+The tenant examples are taken from several major category including: Sports, Fashion, Hobby & Entertainment, F&B, Daily Utilities, and Beauty Care. Each would have a score of financial stability from 0 to 1, 1 indicating a better financial value. Using this metrics, a `size` variable is generated with a range of 0..30. The tenants will be illustrated as the **node**, a higher size will show a more valuable tenants.
+
+```{r}
+syn<-read.csv("syn.csv") %>% 
+  select(-X) %>% 
+  mutate(width=ifelse(weight>0.9,weight,-weight)) %>% 
+  mutate(color=ifelse(weight>0.9,"Blue","Red")) %>% 
+  mutate(width=width^5*10)
+
+syn
+```
+
+The `syn` table shows the relationship between tenants ID, or **edges**. A width is generated from weight, and weight can be thought of as the synergy value between each nodes. A negative synergy means pair of tenants that affect negatively to each other, and blue will be the opposite. Synergy value can be positively effective or negatively effective, an effective synergy is illustrated with its `weight` value.
+
+# Network Visualization 
+
+The following will be the mockup for tenant graphs. It is interactive and you can click a certain node to be able to identify other tenants that is directly related to itself.
+
+```{r}
+library(visNetwork)
+set.seed(100)
+visNetwork(nodes=tenant,edges=syn,width="100%") %>% 
+  visLegend() %>% 
+  visOptions(nodesIdSelection = T,highlightNearest = T) 
+```
+
+# Synergy Model
+
+The synergy metrics can be measured using multiple approach:
+
+1. The correlation of daily sales for each tenants. Tenants that has a high correlation value to each other tends to have a similar trend for daily sales (assumption is each day is one sample of crowd, a similar kind of tenant will generate the same amount of sales)
+
+Pros: The model is easy to implement  
+Cons: The assumption made might be too simplistic, since daily high sales might come from different set of customers that day.  
+
+2. Customer shopping association rules. By looking at how customer's probability of going to multiple stores in a mall we can generate its support to measure store's popularity and its lift to measure the likelihood relationship of two stores visited together.
+
+Pros: The matrices for size and line weight is generated using the same model of customer's behaviour.  
+Cons: The model needs a customer's identifier for each sales.  
+
+3. Tag-based similarity. By having a descriptive tag for each stores, for example: fashion, young woman, middle-aged woman, low price, high revenue, med popularity. We can calculate similarity/distance of each stores. A similar stores will have a high synergy value shown in the graph.
+
+Pros: The tags used as variables is easily updated to improve model performance  
+Cons: Store with same tags will have zero distance, but in business perspective it might indicates direct competitor that in some cases might be not preferrable.  
