@@ -62,7 +62,7 @@ levels(transactions$CostumerID)
 
 ## Transaction Type for Market Basket
 
-```{r}
+```{r echo=FALSE}
 trans <- transactions %>% 
   select(-DiscountVoucher, -SalesSubTotal)
 
@@ -74,7 +74,7 @@ trans <- as(basket, "transactions")
 trans
 ```
 
-```{r}
+```{r, echo=FALSE}
 itemFrequency(trans) %>% 
   as.data.frame() %>% 
   tibble::rownames_to_column() %>% 
@@ -84,7 +84,7 @@ itemFrequency(trans) %>%
   theme(
     axis.text.x = element_text(angle = 40, hjust=1)
   ) +
-  labs(title = "Tenant Popularity",
+  labs(title = "Support of Tenants (Popularity)",
        y = "Frequency", x = "Tenant")
 ```
 
@@ -95,12 +95,14 @@ itemFrequency(trans) %>%
 # finding Support of Tenants
 tenant.support <- data.frame(Tenant = names(itemFrequency(trans)),
                              Support = itemFrequency(trans))
-itemFrequencyPlot(trans)
+
+DT::datatable(tenant.support, options = list(pageLength=5))
+# itemFrequencyPlot(trans)
 ```
 
 ## Lift of Tenants
 
-```{r}
+```{r echo=FALSE}
 # making association rules
 mall_arules <- apriori(data = trans,
                        parameter = list(confidence = 0.5),
@@ -124,10 +126,8 @@ all_rules <- apriori(data = trans,
 all_lift <- DATAFRAME(all_rules)
 all_lift <- all_lift %>% 
   filter(LHS != "{}") %>% 
-  select(LHS, RHS, lift)
-```
+  select(LHS, RHS, confidence)
 
-```{r}
 # Remove duplicated rules (X -> Y = Y -> X)?
 
 # clean data
@@ -137,8 +137,7 @@ fix_lift <- all_lift %>%
   mutate(LHS = str_replace_all(LHS, "\\{|\\}", ""),
          RHS = str_replace_all(RHS, "\\{|\\}", ""))
 
-names(fix_lift) <- c("Tenant1", "Tenant2", "Lift")
-
+names(fix_lift) <- c("Tenant1", "Tenant2", "Confidence")
 ```
 
 ## Visualize Graph
@@ -150,23 +149,29 @@ tenant.support <- tenant.support %>%
   rename(id = Tenant, value = Support)
 ```
 
-```{r}
-fix_lift <- fix_lift %>% 
-  rename(from = Tenant1, to = Tenant2,
-         weight = Lift)
-```
-
 ## Graph
 
+
 ```{r echo=FALSE}
+#Edges
+lift <- fix_lift %>% 
+  rename(from = Tenant1, to = Tenant2,
+         weight = Confidence)
+edges <- lift %>% 
+  mutate(color=ifelse(weight>=mean(lift$weight),"Blue","Red")) %>% 
+  mutate(width=weight^5*10)
+
+# Nodes
+nodes <- tenant.support %>% 
+  mutate(size=value/max(tenant.support$value)*30)
+
+library(visNetwork)
 set.seed(100)
-visNetwork(nodes = tenant.support,
-           edges = fix_lift,
-           width = "100%") %>%
-  visLegend() %>%
-  visOptions(nodesIdSelection = T,
-             highlightNearest = T)
+visNetwork(nodes=nodes,edges=edges, width="100%") %>% 
+  visLegend() %>% 
+  visOptions(nodesIdSelection = T,highlightNearest = T) 
 ```
+
 
 ## TODO
 
