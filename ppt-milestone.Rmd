@@ -1,0 +1,173 @@
+---
+title: "Mall Tenant Synergy Visualization using GraphViz"
+author: "Team Algoritma"
+date: "Last update: 6th September 2019"
+output: 
+  revealjs::revealjs_presentation:
+    theme: serif
+    df_print: paged
+---
+
+## Background
+
+```{r echo=FALSE}
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(DT))
+suppressPackageStartupMessages(library(arules))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(visNetwork))
+suppressPackageStartupMessages(library(ggplot2))
+```
+
+**Case Study: Mall Tenant Analysis**
+
+In order to manage and sort a highly valuable tenants, we need to be able to identify how much the tenant’s financial value can it brought in, and how does the business itself affect other tenants (synergy). A high synergy relationship will also indicates how the tenants will attract a same group of customers.
+
+## Approach: Customer Shopping Association Rules
+
+By looking at how customer’s probability of going to multiple stores in a mall we can generate its support to measure store’s popularity and its lift to measure the likelihood relationship of two stores visited together.
+
+Main attribute of association rules using market basket analysis can be further breakdown into the following:  
+
+<left>
+- Support    
+- Lift  
+- Confidence  
+</left>
+
+## Dummy Transaction Data
+
+
+Given the following dummy data, we'll try to implement market basket analysis:
+
+```{r echo=FALSE}
+transactions <- read.csv("dummy_mall/transactions.csv")
+DT::datatable(transactions, options = list(pageLength=5))
+```
+
+## Dummy Tenant and Members Data
+
+The tenant examples presented in this examples are the following:
+
+```{r echo=FALSE}
+levels(transactions$Tenant)
+```
+
+Currently we use a limited number of members sample:
+
+```{r, echo=FALSE}
+levels(transactions$CostumerID)
+```
+
+## Transaction Type for Market Basket
+
+```{r}
+trans <- transactions %>% 
+  select(-DiscountVoucher, -SalesSubTotal)
+
+basket <- split(x = trans$Tenant, # column to be splitted into groups
+                f = list(trans$CostumerID,trans$Date), # splitted column to be grouped by..
+                drop = T) # drop groups which have no item (Tenant)
+
+trans <- as(basket, "transactions")
+trans
+```
+
+```{r}
+itemFrequency(trans) %>% 
+  as.data.frame() %>% 
+  tibble::rownames_to_column() %>% 
+  ggplot(aes(x=reorder(rowname, -`.`), y=`.`)) +
+  geom_col(fill = "#d63d2d") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 40, hjust=1)
+  ) +
+  labs(title = "Tenant Popularity",
+       y = "Frequency", x = "Tenant")
+```
+
+
+## Support of Tenants
+
+```{r echo=FALSE}
+# finding Support of Tenants
+tenant.support <- data.frame(Tenant = names(itemFrequency(trans)),
+                             Support = itemFrequency(trans))
+itemFrequencyPlot(trans)
+```
+
+## Lift of Tenants
+
+```{r}
+# making association rules
+mall_arules <- apriori(data = trans,
+                       parameter = list(confidence = 0.5),
+                       control = list(verbose = F))
+mall_arules
+```
+
+```{r}
+# to retrieve the first 10 rules
+inspect(head(mall_arules))
+```
+
+## Extract All Rules
+
+```{r}
+# finding all X to Y rules
+all_rules <- apriori(data = trans, 
+                     parameter = list(conf=0.8, maxlen = 2),
+                     control = list(verbose = F))
+
+all_lift <- DATAFRAME(all_rules)
+all_lift <- all_lift %>% 
+  filter(LHS != "{}") %>% 
+  select(LHS, RHS, lift)
+```
+
+```{r}
+# Remove duplicated rules (X -> Y = Y -> X)?
+
+# clean data
+fix_lift <- all_lift %>%
+  mutate(LHS = as.character(LHS),
+         RHS = as.character(RHS)) %>% 
+  mutate(LHS = str_replace_all(LHS, "\\{|\\}", ""),
+         RHS = str_replace_all(RHS, "\\{|\\}", ""))
+
+names(fix_lift) <- c("Tenant1", "Tenant2", "Lift")
+
+```
+
+## Visualize Graph
+
+```{r}
+# data preparation
+tenant.support <- tenant.support %>% 
+  # mutate(id = row(tenant.support)[,1])
+  rename(id = Tenant, value = Support)
+```
+
+```{r}
+fix_lift <- fix_lift %>% 
+  rename(from = Tenant1, to = Tenant2,
+         weight = Lift)
+```
+
+## Graph
+
+```{r echo=FALSE}
+set.seed(100)
+visNetwork(nodes = tenant.support,
+           edges = fix_lift,
+           width = "100%") %>%
+  visLegend() %>%
+  visOptions(nodesIdSelection = T,
+             highlightNearest = T)
+```
+
+## TODO
+
+// DYNAMIC USER RULES EXTRACTION USING INTERACTIVE WIDGET
