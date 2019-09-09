@@ -18,6 +18,7 @@ suppressPackageStartupMessages(library(arules))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(visNetwork))
 suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(RColorBrewer))
 ```
 
 **Case Study: Mall Tenant Analysis**
@@ -30,11 +31,9 @@ By looking at how customer’s probability of going to multiple stores in a mall
 
 Main attribute of association rules using market basket analysis can be further breakdown into the following:  
 
-<left>
 - Support    
 - Lift  
 - Confidence  
-</left>
 
 ## Dummy Transaction Data
 
@@ -62,7 +61,7 @@ levels(transactions$CostumerID)
 
 ## Transaction Type for Market Basket
 
-```{r echo=FALSE}
+```{r}
 trans <- transactions %>% 
   select(-DiscountVoucher, -SalesSubTotal)
 
@@ -73,6 +72,8 @@ basket <- split(x = trans$Tenant, # column to be splitted into groups
 trans <- as(basket, "transactions")
 trans
 ```
+
+## Popularity Metrics using Support
 
 ```{r, echo=FALSE}
 itemFrequency(trans) %>% 
@@ -88,90 +89,64 @@ itemFrequency(trans) %>%
        y = "Frequency", x = "Tenant")
 ```
 
-
-## Support of Tenants
+## Popularity Metrics using Support (cont.)
 
 ```{r echo=FALSE}
 # finding Support of Tenants
-tenant.support <- data.frame(Tenant = names(itemFrequency(trans)),
-                             Support = itemFrequency(trans))
+tenant.support <- data.frame(Support = itemFrequency(trans))
+  
 
 DT::datatable(tenant.support, options = list(pageLength=5))
-# itemFrequencyPlot(trans)
 ```
 
-## Lift of Tenants
+## Extract Apriori Rules
 
 ```{r echo=FALSE}
 # making association rules
 mall_arules <- apriori(data = trans,
-                       parameter = list(confidence = 0.5),
+                       parameter = list(confidence=0.75, maxlen=2),
                        control = list(verbose = F))
 mall_arules
 ```
 
-```{r}
+```{r echo=FALSE}
 # to retrieve the first 10 rules
-inspect(head(mall_arules))
-```
-
-## Extract All Rules
-
-```{r}
-# finding all X to Y rules
-all_rules <- apriori(data = trans, 
-                     parameter = list(conf=0.8, maxlen = 2),
-                     control = list(verbose = F))
-
-all_lift <- DATAFRAME(all_rules)
-all_lift <- all_lift %>% 
-  filter(LHS != "{}") %>% 
-  select(LHS, RHS, confidence)
-
-# Remove duplicated rules (X -> Y = Y -> X)?
-
-# clean data
-fix_lift <- all_lift %>%
+mall_arules <- DATAFRAME(mall_arules) %>%
   mutate(LHS = as.character(LHS),
          RHS = as.character(RHS)) %>% 
   mutate(LHS = str_replace_all(LHS, "\\{|\\}", ""),
          RHS = str_replace_all(RHS, "\\{|\\}", ""))
-
-names(fix_lift) <- c("Tenant1", "Tenant2", "Confidence")
+DT::datatable(mall_arules, options = list(pageLength=5))
 ```
 
-## Visualize Graph
+## Graph Data Preparation
 
 ```{r}
-# data preparation
-tenant.support <- tenant.support %>% 
-  # mutate(id = row(tenant.support)[,1])
-  rename(id = Tenant, value = Support)
-```
-
-## Graph
-
-
-```{r echo=FALSE}
 #Edges
-lift <- fix_lift %>% 
-  rename(from = Tenant1, to = Tenant2,
-         weight = Confidence)
-edges <- lift %>% 
-  mutate(color=ifelse(weight>=mean(lift$weight),"Blue","Red")) %>% 
-  mutate(width=weight^5*10)
+edges <- mall_arules %>% 
+  rename(from = LHS, to = RHS,
+         weight = confidence) %>% 
+  arrange(weight) %>% 
+  mutate(color=rev(terrain.colors(nrow(mall_arules))),
+         width=weight^5*10,
+         arrows="to")
 
 # Nodes
 nodes <- tenant.support %>% 
+  tibble::rownames_to_column() %>% 
+  rename(id = rowname, value = Support) %>% 
   mutate(size=value/max(tenant.support$value)*30)
+```
 
+## vizNetwork
+
+```{r echo=FALSE}
 library(visNetwork)
 set.seed(100)
 visNetwork(nodes=nodes,edges=edges, width="100%") %>% 
   visLegend() %>% 
   visOptions(nodesIdSelection = T,highlightNearest = T) 
 ```
-
 
 ## TODO
 
