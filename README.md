@@ -2,6 +2,8 @@
 
 TenantViz is a project about Tenant Synergy Analysis and its network visualization using `visNetwork`. 
 
+![](tenantviz.PNG)
+
 ## Introduction
 
 In the case of **Mall Management**, It is often needed to manage various types and numerous Tenants in a single mall. We need to identify how big the **financial value** that each Tenant can bring to the Mall and how each tenant can affect other tenant's business **(tenant synergy)**.
@@ -17,12 +19,6 @@ We've developed 2 approaches to perform Tenant Synergy Analysis that is using:
     - Cons: The model needs a customer's identifier for each sales/visit to a tenant.
 
 Both can further be visualized for easier interpretation using `visNetwork`.
-
-<center>
-    
-![](tenantviz.PNG)
-
-</center>
 
 ## Inside this Repository
 
