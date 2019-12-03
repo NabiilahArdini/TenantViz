@@ -10,7 +10,7 @@ output:
 
 ## Background
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(DT))
@@ -37,11 +37,10 @@ Main attribute of association rules using market basket analysis can be further 
 
 ## Dummy Transaction Data
 
-
 Given the following dummy data, we'll try to implement market basket analysis:
 
 ```{r echo=FALSE}
-transactions <- read.csv("dummy_mall/transactions.csv")
+transactions <- read.csv("data_input/transactions.csv")
 DT::datatable(transactions, options = list(pageLength=5))
 ```
 
@@ -121,7 +120,7 @@ DT::datatable(mall_arules, options = list(pageLength=5))
 
 ## Graph Data Preparation
 
-```{r}
+```{r warning=FALSE}
 #Edges
 edges <- mall_arules %>% 
   rename(from = LHS, to = RHS,
