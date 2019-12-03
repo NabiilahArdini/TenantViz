@@ -20,7 +20,7 @@ Both can further be visualized for easier interpretation using `visNetwork`.
 
 <br>
 <center>
-![](tenantviz.PNG)
+![example of tenant visualization](tenantviz.png)
 </center>
 <br>
 
