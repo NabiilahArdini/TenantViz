@@ -18,11 +18,11 @@ We've developed 2 approaches to perform Tenant Synergy Analysis that is using:
 
 Both can further be visualized for easier interpretation using `visNetwork`.
 
-<br>
 <center>
-![example of tenant visualization](tenantviz.png)
+    
+![](tenantviz.PNG)
+
 </center>
-<br>
 
 ## Inside this Repository
 
