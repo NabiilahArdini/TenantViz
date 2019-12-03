@@ -1,0 +1,195 @@
+---
+title: "The Correlation of Daily Sales for Tenant Synergy Analysis"
+author: "Nabiilah Ardini Fauziyyah"
+date: "8/16/2019"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: textmate
+    number_sections: false
+    df_print: paged
+---
+<style>
+h1.title {
+  text-align: center;
+}
+h4.author {
+  text-align: center;
+}
+h4.date {
+  text-align: center;
+}
+
+body {
+text-align: justify}
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+```
+
+## Import Library
+
+```{r message=FALSE, warning=FALSE}
+library(tidyr)
+library(dplyr)
+library(lubridate)
+```
+
+## Read Data
+
+To explain the process of using the correlation of daily sales/revenues for tenant synergy analysis, we use a dummy data: 
+
+```{r message=FALSE, warning=FALSE}
+dummy <- read.csv("data_input/dummy-corr.csv") %>%
+  mutate(Date = mdy(Date))
+head(dummy)
+```
+
+Above is the report of daily revenues for each tenant. Below are the column descriptions:
+
+* `No`: number of rows
+* `Tenant`: name of tenant
+* `Group`: group assigned for each tenant
+* `Date`: date of daily sales recorded
+* `Revenue`: daily sales/revenue
+
+There are assumption applied in using this approach:
+
+* assuming there is only one type of crowd
+* assuming that each tenant has similar revenues ~ number of costumer: one type of tenant whose revenues is high may not give higher amount of costumer than the one which has lower revenues with lower price per item/services. This should be considered when finding the financial value (**size**) for each tenant. 
+
+## Tenant Significancies
+
+Tenant significancies to a Mall (financial value) is represented by each tenant's monthly revenue. It will be visualized using the node size later in the Tenants Graph using `visNetwork`.
+```{r}
+# calculating financial value
+# financial value (size) = monthly revenue
+size <- dummy %>%
+  group_by(Tenant) %>%
+  dplyr::summarize(Monthly_Revenue = mean(Revenue)) %>% 
+  arrange(desc(Monthly_Revenue)) %>% 
+  mutate(size = round(Monthly_Revenue*0.00000001,1))
+size
+```
+
+## Corelation between Tenants
+
+Correlation between tenants reflect the tenant synergy. We can visualize the correlation of daily sales for each tenant using `ggcorr()` from GGally package:
+
+```{r message=FALSE, warning=FALSE}
+# transform long into wide data format
+dummy_cor <- dummy %>% 
+  select(Tenant,Date,Revenue) %>%
+  spread(Tenant,Revenue)
+dummy_cor
+```
+
+```{r message=FALSE, warning=FALSE}
+library(GGally)
+
+ggcorr(dummy_cor[,-1], # do not include the date column 
+       label = T, 
+       label_size = 2.5, 
+       hjust = 1, layout.exp = 5)
+```
+
+Transforming corelation result into data frame using `rcorr()` from Hmisc:
+
+```{r message=FALSE, warning=FALSE}
+library(Hmisc)
+dummy_cor_m <- as.matrix(dummy_cor[,-1])
+cor_matrix <- rcorr(dummy_cor_m)
+
+# ++++++++++++++++++++++++++++
+# flattenCorrMatrix
+# ++++++++++++++++++++++++++++
+# cormat : matrix of the correlation coefficients
+# pmat : matrix of the correlation p-values
+
+flattenCorrMatrix <- function(cormat) {
+  ut <- upper.tri(cormat)
+  data.frame(
+    Tenant1 = rownames(cormat)[row(cormat)[ut]],
+    Tenant2 = rownames(cormat)[col(cormat)[ut]],
+    Correlation  =(cormat)[ut]
+    )
+}
+
+flat_cor <- flattenCorrMatrix(cor_matrix$r) %>% 
+  filter(Correlation >= 0.5 | Correlation <= -0.5) # filter the observations which have strong enough correlation
+
+cor_df <- flat_cor %>% 
+  mutate(width=ifelse(Correlation>0.5,Correlation,-Correlation),
+         width=width^5*10,
+         color=ifelse(Correlation>0.5,"Blue","Red"))
+
+cor_df
+```
+
+## Visualization Network
+
+The financial value and tenant synergy can be visualized using visNetwork. Prior to visualization, a data pre-processing step is needed to match the column name and format:
+```{r}
+vn_nodes <- size %>% 
+  mutate(id = row_number(size)) %>% 
+  rename(label = Tenant,
+         value = size) %>% 
+  select(id, label, value)
+
+head(vn_nodes) 
+```
+
+```{r}
+# prepare switching function from tenant name to tenant id
+decode <- function(data){
+  sapply(as.character(data), switch,
+       "Fossil" = "1",
+       "Guardian" = "2",
+       "Daiso" = "3",
+       "Kopi Kenangan" = "4",
+       "Sport Station" = "5",
+       "Erha Dermatologist" = "6",
+       "The Executive" = "7",
+       "Pull&Bear" = "8",
+       "H&M" = "9",
+       "The Body Shop" = "10",
+       "Yoshinoya" = "11",
+       "Celebrity Fitness" = "12",
+       "KOI" = "13",
+       "Zara" = "14",
+       "Miniso" = "15",
+       "Chatime" = "16",
+       "Pandora" = "17",
+       "CGV" = "18",
+       "Uniqlo"= "19",
+       "Gramedia" = "20")
+}
+
+vn_edges <- cor_df %>%
+  rename(from = Tenant1,
+         to = Tenant2) %>% 
+  mutate(from = decode(from),
+         to = decode(to))
+
+head(vn_edges)
+```
+
+whereas:
+* node: represent each tenant
+* node size: represent the financial value of each tenant
+* line_width: correlation value (the higher the stronger)
+* line_color: correlation value (blue: positive, red: negative)
+
+```{r}
+library(visNetwork)
+set.seed(100)
+visNetwork(nodes=vn_nodes,edges=vn_edges,width="100%") %>%
+  visLegend() %>%
+  visOptions(nodesIdSelection = T,highlightNearest = T)
+```
+

@@ -1,5 +1,5 @@
 ---
-title: "Mall Management - Association Rules"
+title: "Customer Shopping Association Rules for Tenant Synergy Analysis"
 author: "Nabiilah Ardini Fauziyyah"
 date: "9/2/2019"
 output: 
@@ -27,12 +27,18 @@ library(visNetwork) # for Vizualization Network
 
 ## Read Data
 
-The mall dummy data contains Date, Costumer ID (code), and various mall tenants which were visited on each day by each costumer (marked by 1 (visited)).
-
-Hehe
+The dummy data contains Date, Costumer ID (code), and various mall tenants which were visited on each day by each costumer.
 
 ```{r}
-mall <- read.csv("dummy_arules.csv")
+# wide data format
+mall <- read.csv("data_input/dummy_arules.csv")
+head(mall)
+```
+
+In the practice, you might need to transform your data from and into a **wide/long data format**. Below are examples of each data format and how to transform between each one using `spread()` and `gather()` from tidyr package.
+
+```{r}
+# long data format
 transactional <- mall %>% 
   gather(Tenant, Value, 3:22) %>% 
   filter(Value == 1) %>% 
@@ -40,7 +46,7 @@ transactional <- mall %>%
   filter(CostumerID  != '') %>% 
   arrange(Date, CostumerID) 
 
-write.csv(transactional, "dummy_mall/transactions.csv", row.names = FALSE)
+head(transactional, 20)
 ```
 
 ```{r}
@@ -55,14 +61,18 @@ price_est <- function(x){
 
 price_est('Uniqlo')
 
-transactional %>% 
+transactional <- transactional %>% 
   mutate(
     DiscountVoucher = 0,
     SalesSubTotal = round(abs(purrr::map(Tenant, price_est) %>% unlist))
   )
+
+# write.csv(transactional, "data_input/transactions.csv", row.names = FALSE)
+transactional
 ```
 
 ```{r}
+# example of making a wide into a long data format using `gather()`
 dat <- tibble::tibble(
   Precinct = c(1, 1, 1, 2),
   Crime = c("Murder", "Rape", "Burglary", "Murder"),
@@ -73,13 +83,15 @@ dat <- tibble::tibble(
 )
 
 dat
-
-tidyr::gather(dat, Year, Value, 3:6)
+```
+```{r}
+# tidyr::gather(dat, Year, Value, 3:6) <--- another way
 tidyr::gather(dat, Year, Value, -Precinct, -Crime)
 ```
 
-
 ### Transactional to Matrix
+
+We will probably see more of the long data format and we need to transform it into a wide format. The wide format is a *matrix* compromising a status of visit (1) for each mall tenants on each day by each costumer. Below are the steps to transform our `transactional` data into a matrix.
 
 ```{r}
 transactional %>% 
@@ -87,9 +99,8 @@ transactional %>%
   mutate(
     Indicator = 1
   ) %>% 
-  spread(Tenant, Indicator, fill=0)
+  spread(Tenant, Indicator, fill=0) # `spread()` is the opposite of `gather()`
 ```
-
 
 ## Pre-process Data
 
@@ -112,7 +123,7 @@ mgat
 ```{r}
 # changing data.frame into a list (basket) format
 basket <- split(x = mgat$Tenant, # column to be splitted into groups
-                f = list(mgat$CostumerID,mgat$Date), # splitted column to be grouped by..
+                f = list(mgat$CostumerID,mgat$Date), # splitted column to be grouped by other column
                 drop = T) # drop groups which have no item (Tenant)
 
 class(basket)
@@ -135,7 +146,7 @@ These informations can be derived from the **Support** of a tenant and the **Lif
 
 **Lift**: This signifies **the likelihood of the item Y being purchased when item X is purchased** while taking into account the popularity (support) of item X and item Y.
 
-**In mall management analysis, the item is the tenant.*
+*In mall management analysis, the item is the tenant.*
 
 ### Support of Tenants
 
@@ -144,11 +155,11 @@ These informations can be derived from the **Support** of a tenant and the **Lif
 tenant.support <- data.frame(Tenant = names(itemFrequency(trans)),
                              Support = itemFrequency(trans))
 rownames(tenant.support) <- NULL
-tenant.support    
-itemFrequencyPlot(trans)
+tenant.support
+```
 
-# save as csv
-# write.csv(tenant.support, "tenant.sup.csv")
+```{r}
+itemFrequencyPlot(trans)
 ```
 
 ### Lift of Tenants
@@ -156,7 +167,7 @@ itemFrequencyPlot(trans)
 ```{r}
 # making association rules
 mall_arules <- apriori(data = trans,
-                       parameter = list(confidence = 0.5),
+                       parameter = list(confidence = 0.5), #filter rules which has confidence >= 0.5
                        control = list(verbose = F))
 mall_arules
 ```
@@ -211,9 +222,6 @@ fix_lift <- all_lift %>%
 names(fix_lift) <- c("Tenant1", "Tenant2", "Lift")
 
 fix_lift
-
-# save as csv
-# write.csv(fix_lift, "tenant.lift.csv")
 ```
 
 After we have the support and lift of each tenant, we can use the data to be plotted in a Visualization Network.
