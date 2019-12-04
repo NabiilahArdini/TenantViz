@@ -37,4 +37,9 @@ All the data used for this project were stored in data_input.
 * Tiara
 * credit to [Steven Surya Tanujaya](https://www.linkedin.com/in/stevensurya/) who also contributed in the development of first idea of TenantViz! :)
 
+## Additional Readings
 
+* https://www.hackerearth.com/blog/developers/beginners-tutorial-apriori-algorithm-data-mining-r-implementation/
+* https://blog.aptitive.com/building-the-transactions-class-for-association-rule-mining-in-r-using-arules-and-apriori-c6be64268bc4
+* https://www.r-bloggers.com/implementing-apriori-algorithm-in-r/
+* https://rdrr.io/cran/arules/man/DATAFRAME.html
